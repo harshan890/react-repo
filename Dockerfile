@@ -1,4 +1,4 @@
-# Use Node base image
+#  firts Uses the Node base image
 FROM node:26.1.0
 
 # Set working directory
