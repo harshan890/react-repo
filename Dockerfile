@@ -1,7 +1,7 @@
 # Firt uses the Node base image
 FROM node:26.1.0
 
-# Set working directory
+# Yes Setting the working directory
 WORKDIR /app
 
 # Copy package files
