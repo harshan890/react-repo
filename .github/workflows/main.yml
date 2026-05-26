@@ -33,8 +33,7 @@ jobs:
 
       - name: Push Docker Image to ECR
         run: |
-          docker push \
-          ${{ steps.login-ecr.outputs.registry }}/${{ secrets.ECR_REPOSITORY }}:latest
+          docker push 150811559021.dkr.ecr.us-east-2.amazonaws.com/react-app:latest
 
 #      - name: Force ECS Deployment
 #        run: |
