@@ -27,7 +27,7 @@ jobs:
       - name: Configure AWS Credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::150811559021:role/YOUR_OIDC_ROLE_NAME
+          role-to-assume: arn:aws:iam::150811559021:role/ODIC-access
           aws-region: us-east-2
 
       - name: Login to Amazon ECR
@@ -39,7 +39,7 @@ jobs:
 
       - name: Tag Docker Image
         run: |
-          docker tag react-app:latest 150811559021.dkr.ecr.us-east-2.amazonaws.com/react-app:latest
+          docker tag react-app:latest 150811559021.dkr.ecr.us-east-2.amazonaws.com/react-app
 
       - name: Push Docker Image to ECR
         run: |
