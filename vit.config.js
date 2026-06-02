@@ -5,8 +5,6 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: true,
-    allowedHosts: [
-      'reactjs-harshan-alb-1418567388.us-east-2.elb.amazonaws.com'
-    ]
+    allowedHosts: 'all'
   }
 })
