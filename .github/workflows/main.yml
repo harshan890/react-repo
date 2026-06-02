@@ -35,7 +35,8 @@ jobs:
         uses: aws-actions/amazon-ecr-login@v2
 
       - name: Build Docker Image
-          docker build -t reactjs-harshan .
+        run: | 
+         docker build -t reactjs-harshan .
 
       - name: Tag Docker Image
         run: |
