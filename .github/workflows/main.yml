@@ -1,3 +1,4 @@
+# hello
 name: Deploy to ECS
 
 on:
@@ -27,7 +28,7 @@ jobs:
       - name: Configure AWS Credentials (OIDC)
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          role-to-assume: arn:aws:iam::150811559021:role/odic-harshan-role
+          role-to-assume: arn:aws:iam::150811559021:role/odic-new-harshan
           aws-region: us-east-2
 
       - name: Login to Amazon ECR
@@ -35,15 +36,15 @@ jobs:
         uses: aws-actions/amazon-ecr-login@v2
 
       - name: Build Docker Image
-        run: docker build -t reactjs-harshan .
+          docker build -t reactjs-harshan .
 
       - name: Tag Docker Image
         run: |
-          docker tag reactjs-harshan:latest 150811559021.dkr.ecr.us-east-2.amazonaws.com/reactjs-harshan:latest
+         docker tag reactjs-harshan:latest 150811559021.dkr.ecr.us-east-2.amazonaws.com/reactjs-harshan:latest
 
       - name: Push Docker Image to ECR
         run: |
-          docker push 150811559021.dkr.ecr.us-east-2.amazonaws.com/reactjs-harshan:latest
+         docker push 150811559021.dkr.ecr.us-east-2.amazonaws.com/reactjs-harshan:latest
 
       - name: Force ECS Deployment
         run: |
